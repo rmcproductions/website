@@ -18,7 +18,14 @@ function init(){
             value:'1turn'
         },
         complete: () => {
-            document.getElementById("background-image").style.filter = "blur(20px) brightness(0.2)"
+            document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
+            $(".department-banner").hover(
+                e => {
+                    document.getElementById("background-image").style.filter = "blur(20px) brightness(0.2)"
+                },
+                e  => {
+                    document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
+            });
             anime({
                 targets: '.department-banner',
                 right: 0,
