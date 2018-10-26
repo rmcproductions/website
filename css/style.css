@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+html, body {
+    /*background: #161618;*/
+    font-family: Poppins, sans-serif;
+    color:white;
+    background: #000;
+}
+.background-image{
+    background: url("../img/pexels-photo-61383.jpeg");
+    background-size: cover;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: fixed;
+    transition: .3s ease;
+}
+
+.loading-screen{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background:transparent;
+    transition: .3s ease;
+}
+.loading-logo{
+    position:fixed;
+    width:10%;
+    left:45%;
+    z-index:1000;
+}
+.loading-circle{
+    width:10%;
+    left:45%;
+    transform: scale(0);
+}
+
+/*.department{
+    position:fixed;
+    height:30%;
+    top:35%;
+}
+.department.left{
+    left:-10%;
+}
+.department.left:after{
+    content:"FRONTEND";
+    color: white;
+    width:100%;
+    height:100%;
+}*/
+
+.departments-overlay{
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    position:fixed;
+    z-index:50;
+}
+.department-banner{
+    position:fixed;
+    top:0;
+    right:-25%;
+    width:25%;
+    height:100%;
+    opacity:0;
+    text-align: center;
+    font-size:50px;
+}
+.department-banner:hover {
+    cursor: pointer;
+    background: rgba(0,0,0,0.4);
+    font-size:55px;
+    width:28%;
+}
+.department-banner.left{
+    left:-25%;
+}
+
+.im-just-too-dumb-to-center-in-css-dont-hire-me{
+    background:none;
+    border:none;
+    font-family: Poppins, sans-serif;
+    font-size:50px;
+    color: white;
+    width:100%;
+    height:100%;
+    cursor: pointer;
+}
+.im-just-too-dumb-to-center-in-css-dont-hire-me:focus{
+    outline: none;
+}
+
+.social-button{
+    width:60px;
+    height:60px;
+    border-radius:1000px;
+    max-width: 60px;
+    display: inline-block;
+    transform: translateY(70px);
+    margin-right:10px;
+}
+.socials-container{
+    width:30%;
+    height:60px;
+    position: fixed;
+    bottom:10px;
+    left:35%;
+}
+.social-button#soundcloud{
+    background: #ff8800;
+}
+.social-button#github{
+    background: #78909C;
+}
+.social-button#spotify{
+    background: #1db954;
+}
+.social-button#instagram{
+    background: #e1306c;
+}
+.social-button#youtube{
+    background: #ff0000;
+}
+.social-button#discord{
+    background: #7289DA;
+}
+.social-img{
+    height:40px;
+    margin: 10px;
+}
+
