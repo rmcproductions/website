@@ -3,6 +3,7 @@ $(document).ready(() => {
 });
 
 function init(){
+    particlesJS('particles-js', particles_config);
     anime({
         targets: '.loading-logo',
         translateY: {
