@@ -34,6 +34,11 @@ $(document).ready(() => {
             bottom: '-110%'
         })
     })
+
+    if(localStorage.getItem("volume")){
+        document.getElementById("preview").volume = localStorage.getItem("volume");
+        document.getElementById("volume_slider").value = 100 - localStorage.getItem("volume") *100;
+    }
 });
 
 function anime_init(){
@@ -132,4 +137,5 @@ function play_pause(arg){
 
 $('input[type=range]').on('input', function () {
     document.getElementById("preview").volume = 1 - document.getElementById("volume_slider").value /100
+    localStorage.setItem("volume", 1 - document.getElementById("volume_slider").value / 100)
 });
