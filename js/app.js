@@ -1,24 +1,43 @@
+let player_pp = false;
+
 $(document).ready(() => {
-    anime_init()
+    anime_init();
     $("#developing-button").click(e => {
         anime({
             targets: '.department-skill.left',
             bottom:{
                 value:0
-            },
-            duration: 1500
+            }
         })
-    })
+    });
     $("#musicproduction-button").click(e => {
         anime({
             targets: '.department-skill.right',
-            bottom:0
+            bottom:0,
+            complete: () => {
+                anime({
+                    targets: ".player-button",
+                    translateX: [70, 0],
+                    delay: (e, i) => {
+                        return i*50
+                    },
+                    duration:1000,
+                    complete: () => {
+                        $("#pp_btn").click(e => {
+                            play_pause()
+                        })
+                    }
+                })
+            }
+        });
+        //Audio
+        $("#pp_btn").click(e => {
+            play_pause()
         })
-    })
+    });
 
     $(".xbtn").click(e => {
         anime.remove(".department-skill")
-        console.log(e.target.id.substr(2))
         anime({
             targets: '#' + e.target.id.substr(2),
             bottom: '-110%'
@@ -69,7 +88,7 @@ function anime_init(){
                 translateY: ['70px', 0],
                 duration: 500,
                 delay: (el, i) => {return i*20},
-                complete: () => {
+                /*complete: () => {
 
                     $(".social-button.outer").hover((e) => {
                         anime({
@@ -85,7 +104,7 @@ function anime_init(){
                         })
                     })
 
-                }
+                }*/
             })
         }
     });
@@ -104,4 +123,18 @@ function anime_init(){
         direction: 'alternate'
     });
 
+}
+
+
+function play_pause(arg){
+    player_pp = !player_pp;
+    (arg ? player_pp = false : true)
+    if(player_pp) {
+        document.getElementById("preview").play();
+        document.getElementById("pp_path").innerHTML = "<path fill=\"#fff\" d=\"M14,19H18V5H14M6,19H10V5H6V19Z\" />";
+    }
+    else {
+        document.getElementById("preview").pause();
+        document.getElementById("pp_path").innerHTML = "<path fill=\"#fff\" d=\"M8,5.14V19.14L19,12.14L8,5.14Z\" />";
+    }
 }

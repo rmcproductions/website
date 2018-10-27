@@ -134,6 +134,7 @@ p{
     right:0;
     transition: .2s ease;
     line-height: 50px;
+    border-bottom:1px solid #aaa;
 }
 .xbtn:hover{
     background:red;
@@ -179,3 +180,27 @@ p{
     margin: 10px;
 }
 
+.music-player{
+    position:absolute;
+    height:40%;
+    width:70px;
+    top:20%;
+    right:0;
+}
+.player-button{
+    width:30px;
+    height:30px;
+    padding:10px;
+    border-radius: 1000px;
+    background: #161618;
+    transform: translateX(70px);
+    margin-bottom: 10px;
+}
+.player-button:hover{
+    background: #262628;
+    cursor: pointer;
+}
+.player-icon{
+    width:30px;
+    height:30px;
+}
