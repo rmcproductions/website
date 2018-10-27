@@ -21,19 +21,10 @@ $(document).ready(() => {
                     delay: (e, i) => {
                         return i*50
                     },
-                    duration:1000,
-                    complete: () => {
-                        $("#pp_btn").click(e => {
-                            play_pause()
-                        })
-                    }
+                    duration:1000
                 })
             }
         });
-        //Audio
-        $("#pp_btn").click(e => {
-            play_pause()
-        })
     });
 
     $(".xbtn").click(e => {
