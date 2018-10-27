@@ -1,7 +1,7 @@
 var particles_config = {
     "particles": {
         "number": {
-            "value": 50
+            "value": 100
         },
         "shape": {
             "type": "circle"
@@ -10,8 +10,14 @@ var particles_config = {
             "value": 3
         },
         "line_linked": {
-            "enable": true
+            "enable": true,
+            "distance": 150
         },
+        "move": {
+            "enable": true,
+            "speed": 0.5,
+            "direction": "bottom"
+        }
     },
     "interactivity": {
 

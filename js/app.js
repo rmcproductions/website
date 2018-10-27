@@ -75,7 +75,7 @@ function init(){
         translateX: function(el, i) {
             return anime.random(-200, 200);
         },
-        opacity: anime.random(0.5,0.8),
+        opacity: anime.random(0.5,0.7),
         scale: [0, function() { return anime.random(1, 1.1); }],
         duration: function() { return anime.random(1200, 1800); },
         delay: function() { return 300+anime.random(0, 500); },
