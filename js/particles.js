@@ -3,9 +3,6 @@ var particles_config = {
         "number": {
             "value": 100
         },
-        "shape": {
-            "type": "circle"
-        },
         "size": {
             "value": 3
         },

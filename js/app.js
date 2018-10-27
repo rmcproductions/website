@@ -3,7 +3,7 @@ $(document).ready(() => {
 });
 
 function init(){
-    particlesJS('particles-js', particles_config);
+    //particlesJS('particles-js', particles_config);
     anime({
         targets: '.loading-logo',
         translateY: {
@@ -18,29 +18,27 @@ function init(){
             value:'1turn'
         },
         complete: () => {
-            document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
-            $(".department-banner").hover(
+            //document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
+            /*$(".department-banner").hover(
                 e => {
                     document.getElementById("background-image").style.filter = "blur(20px) brightness(0.2)"
                 },
                 e  => {
                     document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
-            });
+            });*/
             anime({
-                targets: '.department-banner',
+                targets: '.department',
                 right: 0,
                 opacity: 1,
-                duration: 1500,
                 complete: () => {
                     $('.department-banner').css("transition", "0.3s ease")
                 }
             });
-            anime.remove('.department-banner.left');
+            anime.remove('.department.left');
             anime({
-                targets: '.department-banner.left',
+                targets: '.department.left',
                 left: 0,
-                opacity: 1,
-                duration: 1500
+                opacity: 1
             })
             anime({
                 targets: '.social-button',
