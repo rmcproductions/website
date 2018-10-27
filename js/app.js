@@ -138,3 +138,7 @@ function play_pause(arg){
         document.getElementById("pp_path").innerHTML = "<path fill=\"#fff\" d=\"M8,5.14V19.14L19,12.14L8,5.14Z\" />";
     }
 }
+
+$('input[type=range]').on('input', function () {
+    document.getElementById("preview").volume = 1 - document.getElementById("volume_slider").value /100
+});
