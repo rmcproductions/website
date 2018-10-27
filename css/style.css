@@ -50,6 +50,7 @@ html, body {
     color: white;
     border:none;
     transition: .3s ease;
+    word-wrap: break-word;
 }
 .department:hover{
     width:25%;
@@ -187,7 +188,7 @@ p{
     top:20%;
     right:0;
 }
-.player-button{
+.button{
     width:30px;
     height:30px;
     padding:10px;
@@ -196,11 +197,11 @@ p{
     transform: translateX(70px);
     margin-bottom: 10px;
 }
-.player-button:hover{
+.button:hover{
     background: #262628;
     cursor: pointer;
 }
-.player-icon{
+.icon{
     width:30px;
     height:30px;
 }

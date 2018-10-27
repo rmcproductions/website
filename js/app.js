@@ -1,4 +1,4 @@
-let player_pp = false;
+let player_pp = false, songs = ['mushrooms', 'perfect-match'];
 
 $(document).ready(() => {
     anime_init();
@@ -20,8 +20,7 @@ $(document).ready(() => {
                     translateX: [70, 0],
                     delay: (e, i) => {
                         return i*50
-                    },
-                    duration:1000
+                    }
                 })
             }
         });
@@ -32,6 +31,14 @@ $(document).ready(() => {
         anime({
             targets: '#' + e.target.id.substr(2),
             bottom: '-110%'
+        })
+        anime({
+            targets: ".player-button",
+            translateX: [0, 70],
+            delay: (e, i) => {
+                return i*50
+            },
+            duration:300
         })
     })
 
@@ -133,6 +140,10 @@ function play_pause(arg){
         document.getElementById("preview").pause();
         document.getElementById("pp_path").innerHTML = "<path fill=\"#fff\" d=\"M8,5.14V19.14L19,12.14L8,5.14Z\" />";
     }
+}
+function shuffle_songs(){
+    document.getElementById("preview").src = 'audio/' + songs[Math.round(Math.random())] + '.mp3';
+    if(player_pp) document.getElementById("preview").play()
 }
 
 $('input[type=range]').on('input', function () {
