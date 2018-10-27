@@ -1,8 +1,32 @@
 $(document).ready(() => {
-    init()
+    anime_init()
+    $("#developing-button").click(e => {
+        anime({
+            targets: '.department-skill.left',
+            bottom:{
+                value:0
+            },
+            duration: 1500
+        })
+    })
+    $("#musicproduction-button").click(e => {
+        anime({
+            targets: '.department-skill.right',
+            bottom:0
+        })
+    })
+
+    $(".xbtn").click(e => {
+        anime.remove(".department-skill")
+        console.log(e.target.id.substr(2))
+        anime({
+            targets: '#' + e.target.id.substr(2),
+            bottom: '-110%'
+        })
+    })
 });
 
-function init(){
+function anime_init(){
     //particlesJS('particles-js', particles_config);
     anime({
         targets: '.loading-logo',
