@@ -85,7 +85,12 @@ function anime_init(){
                 targets: '.department.left',
                 left: 0,
                 opacity: 1
-            })
+            });
+            anime({
+                targets: '.after-text',
+                translateY: [200, 0],
+                opacity: [0, 1]
+            });
             anime({
                 targets: '.social-button',
                 translateY: ['70px', 0],
