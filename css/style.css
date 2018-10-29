@@ -39,7 +39,8 @@ html, body {
 
 .department{
     position:fixed;
-    height:30%;
+    height:auto;
+    min-height: 30%;
     width:20%;
     top:35%;
     right:-20%;
@@ -210,7 +211,7 @@ p{
 }
 .after-text{
     font-size:30px;
-    top:50%;
+    top:40%;
     position: absolute;
     text-align: center;
     left:30%;
