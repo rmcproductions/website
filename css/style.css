@@ -55,7 +55,6 @@ html, body {
     word-wrap: break-word;
 }
 .department:hover{
-    width:25%;
     cursor: pointer;
 }
 .department.left{
