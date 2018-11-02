@@ -15,6 +15,11 @@ html, body {
     position: fixed;
     transition: .3s ease;
 }
+#background-overlay{
+    background: none;
+    background-size: cover;
+    top:100px;
+}
 
 .loading-screen{
     position:fixed;

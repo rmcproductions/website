@@ -49,7 +49,11 @@ $(document).ready(() => {
 });
 
 function anime_init(){
-    //particlesJS('particles-js', particles_config);
+    var time = new Date();
+        if(time.getMonth() >= 10) {
+            particlesJS('background-image', particles_config);
+            $("#background-overlay").css("background", "url('img/snow.svg')");
+        }
     anime({
         targets: '.loading-logo',
         translateY: {

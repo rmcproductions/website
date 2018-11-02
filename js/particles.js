@@ -7,12 +7,12 @@ var particles_config = {
             "value": 3
         },
         "line_linked": {
-            "enable": true,
+            "enable": false,
             "distance": 150
         },
         "move": {
             "enable": true,
-            "speed": 0.5,
+            "speed": 1,
             "direction": "bottom"
         }
     },
