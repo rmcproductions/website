@@ -1,161 +1,72 @@
-let player_pp = false, songs = ['mushrooms', 'perfect-match'];
-
 $(document).ready(() => {
-    anime_init();
-    $("#developing-button").click(e => {
-        anime({
-            targets: '.department-skill.left',
-            bottom:{
-                value:0
-            }
-        })
+    let position = 1;
+    let entries = [
+        ['About me', () => {}, 'My name is Rene and I\'m 17 years old. I\'m a hobby shitcoder and music producer. Feel free to check out some of my content.'],
+        ['Discord', () => { window.open('http://discord.rmcprod.me', '_blank'); }],
+        ['Github', () => { window.open('https://github.com/rmcproductions', '_blank'); }],
+        ['Soundcloud', () => { window.open('https://soundcloud.com/rmc_productions', '_blank'); }],
+        ['Spotify', () => { window.open('https://open.spotify.com/artist/5UcCjBjJO8npLgdOUmkEG6?si=ruWgLdSEQWiGrEkOIg1r7Q', '_blank'); }],
+        ['Instagram', () => { window.open('https://instagram.com/rene.vlg', '_blank'); }],
+        ['Youtube', () => { window.open('https://youtube.com/rmc_productions', '_blank'); }],
+        ['Email', () => { window.open('mailto: info@rmcprod.me', '_blank'); }],
+
+        ['Azuma', () => { window.open('http://azuma.rmcprod.me', '_blank'); }, 'A public chatroom for everyone'],
+        ['Rhodium', () => { window.open('http://rhodium.rmcprod.me', '_blank'); }, 'A multi-purpose Discord Bot'],
+    ];
+
+    $('.selectable').each((i, e) => {
+        e.onclick = entries[i][1];
     });
-    $("#musicproduction-button").click(e => {
-        anime({
-            targets: '.department-skill.right',
-            bottom:0,
-            complete: () => {
-                anime({
-                    targets: ".player-button",
-                    translateX: [70, 0],
-                    delay: (e, i) => {
-                        return i*50
-                    }
-                })
+
+    let markOption = () => {
+        $('.selectable').css('background', 'transparent');
+        $('.selectable').css('color', 'white');
+        $('.selectable').each((i, e) => {
+            if(i == position){
+                $(e).css('background', '#eee');
+                $(e).css('color', 'black');
+                if(entries[i][2]) document.getElementById('description').innerHTML = '> ' + entries[i][0] + '<br>> ' + entries[i][2];
+                else document.getElementById('description').innerHTML = '> ' + entries[i][0] + '<br>> Link to ' + entries[i][0].toUpperCase();
             }
         });
-    });
+    };
 
-    $(".xbtn").click(e => {
-        anime.remove(".department-skill")
-        anime({
-            targets: '#' + e.target.id.substr(2),
-            bottom: '-110%'
-        })
-        anime({
-            targets: ".player-button",
-            translateX: [0, 70],
-            delay: (e, i) => {
-                return i*50
-            },
-            duration:300
-        })
-    })
-
-    if(localStorage.getItem("volume")){
-        document.getElementById("preview").volume = localStorage.getItem("volume");
-        document.getElementById("volume_slider").value = 100 - localStorage.getItem("volume") *100;
-    }
-});
-
-function anime_init(){
-    var time = new Date();
-        if(time.getMonth() >= 10) {
-            particlesJS('background-image', particles_config);
-            $("#background-overlay").css("background", "url('img/snow.svg')");
+    let switchSelection = key => {
+        switch(key){
+            case 38:
+                if(position > 0) position--;
+                markOption();
+                break;
+            case 40:
+                if(position < document.getElementsByClassName('selectable').length - 1) position++;
+                markOption();
+                break;
+            case 13:
+                entries[position][1].call();
+                break;
         }
-    anime({
-        targets: '.loading-logo',
-        translateY: {
-            value: 100,
-            duration: 1000
-        },
-        scale:{
-            value:1.5,
-            delay: 4200
-        },
-        rotate:{
-            value:'1turn'
-        },
-        complete: () => {
-            //document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
-            /*$(".department-banner").hover(
-                e => {
-                    document.getElementById("background-image").style.filter = "blur(20px) brightness(0.2)"
-                },
-                e  => {
-                    document.getElementById("background-image").style.filter = "blur(10px) brightness(0.5)"
-            });*/
-            anime({
-                targets: '.department',
-                right: 0,
-                opacity: 1,
-                complete: () => {
-                    $('.department-banner').css("transition", "0.3s ease")
-                }
-            });
-            anime.remove('.department.left');
-            anime({
-                targets: '.department.left',
-                left: 0,
-                opacity: 1
-            });
-            anime({
-                targets: '.after-text',
-                translateY: [200, 0],
-                opacity: [0, 1]
-            });
-            anime({
-                targets: '.social-button',
-                translateY: ['70px', 0],
-                duration: 500,
-                delay: (el, i) => {return i*20},
-                /*complete: () => {
+    };
 
-                    $(".social-button.outer").hover((e) => {
-                        anime({
-                            targets: e.target,
-                            scale: 1.3
-                        })
-                    },
-                    (e) => {
-                        anime.remove(e.target)
-                        anime({
-                            targets: e.target,
-                            scale: 1
-                        })
-                    })
+    switchSelection(38);
 
-                }*/
-            })
-        }
-    });
-    anime({
-        targets: '.loading-circle',
-        translateY: [100,function(el, i) {
-            return anime.random(000, 400);
-        }],
-        translateX: function(el, i) {
-            return anime.random(-200, 200);
-        },
-        opacity: anime.random(0.5,0.7),
-        scale: [0, function() { return anime.random(1, 1.1); }],
-        duration: function() { return anime.random(1200, 1800); },
-        delay: function() { return 300+anime.random(0, 500); },
-        direction: 'alternate'
+    $(document).on('keydown', e => {
+        // 38 UP
+        // 40 DOWN
+        switchSelection(e.which);
     });
 
-}
 
+    let clock = () => {
+        let time = new Date();
 
-function play_pause(arg){
-    player_pp = !player_pp;
-    (arg ? player_pp = false : true)
-    if(player_pp) {
-        document.getElementById("preview").play();
-        document.getElementById("pp_path").innerHTML = "<path fill=\"#fff\" d=\"M14,19H18V5H14M6,19H10V5H6V19Z\" />";
-    }
-    else {
-        document.getElementById("preview").pause();
-        document.getElementById("pp_path").innerHTML = "<path fill=\"#fff\" d=\"M8,5.14V19.14L19,12.14L8,5.14Z\" />";
-    }
-}
-function shuffle_songs(){
-    document.getElementById("preview").src = 'audio/' + songs[Math.round(Math.random())] + '.mp3';
-    if(player_pp) document.getElementById("preview").play()
-}
+        let h = (time.getHours() < 10 ? '0' + time.getHours() : time.getHours());
+        let m = (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes());
+        let s = (time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds());
 
-$('input[type=range]').on('input', function () {
-    document.getElementById("preview").volume = 1 - document.getElementById("volume_slider").value /100
-    localStorage.setItem("volume", 1 - document.getElementById("volume_slider").value / 100)
+        $('#clock').text(`${h}:${m}:${s}`);
+    };
+
+    setInterval(clock, 100);
+
+    $(document).focus();
 });
