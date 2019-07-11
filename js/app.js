@@ -10,9 +10,9 @@ $(document).ready(() => {
         ['Youtube', () => { window.open('https://youtube.com/rmc_productions', '_blank'); }],
         ['Email', () => { window.open('mailto: info@rmcprod.me', '_blank'); }],
 
-        ['Nitrogen', () => { window.open('http://rmcprod.me/nitrogen', '_blank'); }, 'A beautiful web browser, written in javascript.'],
+        ['Nitrogen', () => { window.open('https://rmcprod.me/nitrogen', '_blank'); }, 'A beautiful web browser, written in javascript.'],
         ['Azuma', () => { window.open('http://azuma.rmcprod.me', '_blank'); }, 'A public chatroom for everyone'],
-        ['Rhodium', () => { window.open('http://rhodium.rmcprod.me', '_blank'); }, 'A multi-purpose Discord Bot'],
+        ['Rhodium', () => { window.open('http://rhodium.rmcprod.me', '_blank'); }, 'A multi-purpose Discord Bot']
     ];
 
     $('.selectable').each((i, e) => {
