@@ -1,7 +1,7 @@
 $(document).ready(() => {
     let position = 1;
     let entries = [
-        ['About me', () => {}, 'My name is Rene and I\'m 17 years old. I\'m a hobby shitcoder and music producer. Feel free to check out some of my content.'],
+        ['About me', () => {}, 'My name is Rene and I\'m 18 years old. I\'m a hobby shitcoder and music producer. Feel free to check out some of my content.'],
         ['Discord', () => { window.open('http://discord.rmcprod.me', '_blank'); }],
         ['Github', () => { window.open('https://github.com/rmcproductions', '_blank'); }],
         ['Soundcloud', () => { window.open('https://soundcloud.com/rmc_productions', '_blank'); }],
