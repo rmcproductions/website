@@ -9,6 +9,7 @@ $(document).ready(() => {
         ['Instagram', () => { window.open('https://instagram.com/rene.vlg', '_blank'); }],
         ['Youtube', () => { window.open('https://youtube.com/rmc_productions', '_blank'); }],
         ['Email', () => { window.open('mailto: info@rmcprod.me', '_blank'); }],
+        ['Tellonym', () => { window.open('https://tellonym.me/rene.vlg', '_blank'); }],
 
         ['Nitrogen', () => { window.open('https://rmcprod.me/nitrogen/', '_blank'); }, 'A beautiful web browser, written in javascript.'],
         ['Azuma', () => { window.open('http://azuma.rmcprod.me', '_blank'); }, 'A public chatroom for everyone'],
