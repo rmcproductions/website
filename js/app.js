@@ -11,10 +11,11 @@ $(document).ready(() => {
         ['Youtube', () => { window.open('https://youtube.com/rmc_productions', '_blank'); }],
         ['Email', () => { window.open('mailto: info@rmcprod.me', '_blank'); }],
         ['Tellonym', () => { window.open('https://tellonym.me/rene.vlg', '_blank'); }],
-
-        ['Nitrogen', () => { window.open('https://rmcprod.me/nitrogen/', '_blank'); }, 'A beautiful web browser, written in javascript.'],
-        ['Azuma', () => { window.open('http://azuma.rmcprod.me', '_blank'); }, 'A public chatroom for everyone'],
-        ['Rhodium', () => { window.open('http://rhodium.rmcprod.me', '_blank'); }, 'A multi-purpose Discord Bot']
+        
+        ['Mini', () => { window.open('https://mini.rmcprod.me/', '_blank'); }, 'Fast and efficient URL shortener.'],
+        ['Nitrogen', () => { window.open('https://rmcprod.me/nitrogen/', '_blank'); }, '[DEPRECATED] A beautiful web browser, written in javascript.'],
+        ['Azuma', () => { window.open('https://github.com/azuma-chat', '_blank'); }, 'A public chatroom for everyone'],
+        ['Rhodium', () => { window.open('https://github.com/RhodiumBot/Rhodium', '_blank'); }, '[UNMAINTAINED] A multi-purpose Discord Bot']
     ];
 
     $('.selectable').each((i, e) => {
