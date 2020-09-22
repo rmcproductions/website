@@ -8,7 +8,7 @@ $(document).ready(() => {
         ['Soundcloud', () => { window.open('https://soundcloud.com/rmc_productions', '_blank'); }],
         ['Spotify', () => { window.open('https://open.spotify.com/artist/5UcCjBjJO8npLgdOUmkEG6?si=ruWgLdSEQWiGrEkOIg1r7Q', '_blank'); }],
         ['Instagram', () => { window.open('https://instagram.com/rene.vlg', '_blank'); }],
-        ['Youtube', () => { window.open('https://youtube.com/rmc_productions', '_blank'); }],
+        ['Youtube (VOXAIN)', () => { window.open('https://youtube.com/rmc_productions', '_blank'); }],
         ['Email', () => { window.open('mailto: info@rmcprod.me', '_blank'); }],
         ['Tellonym', () => { window.open('https://tellonym.me/rene.vlg', '_blank'); }],
         
